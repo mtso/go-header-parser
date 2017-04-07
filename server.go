@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"github.com/mtso/go-header-parser/ip"
 	"net/http"
 	"os"
 	"strings"
@@ -32,7 +33,7 @@ func getSoftware(r *http.Request) (u string) {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	p := &profile{
-		Ip:       getIPAdress(r),
+		Ip:       ip.GetIPAdress(r),
 		Language: r.Header.Get("accept-language"),
 		Software: getSoftware(r),
 	}

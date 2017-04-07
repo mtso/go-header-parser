@@ -1,5 +1,5 @@
 {
-	"ImportPath": "github.com/mtso/gotimestamp",
+	"ImportPath": "github.com/mtso/go-header-parser",
 	"GoVersion": "go1.2",
 	"GodepVersion": "v79",
 	"Deps": []
