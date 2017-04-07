@@ -1,3 +1,3 @@
-# gotimestamp
+# go-header-parser
 
-freecodecamp.com timestamp api project in Go.
+freecodecamp.com header parser api project in Go.
