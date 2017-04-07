@@ -14,7 +14,7 @@ type profile struct {
 	Software string `json:"software"`
 }
 
-func (p profile) writeJson(w http.ResponseWriter, r *http.Request) {
+func (p profile) writeJson(w http.ResponseWriter) {
 	js, err := json.Marshal(p)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
@@ -33,11 +33,11 @@ func getSoftware(r *http.Request) (u string) {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	p := &profile{
-		Ip:       ip.GetIPAdress(r),
+		Ip:       ip.GetIPAddress(r),
 		Language: r.Header.Get("accept-language"),
 		Software: getSoftware(r),
 	}
-	p.writeJson(w, r)
+	p.writeJson(w)
 }
 
 func main() {

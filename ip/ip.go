@@ -16,7 +16,7 @@ type ipRange struct {
 }
 
 // GetIPAddress gets the client IP Address of an HTTP Request.
-func GetIPAdress(r *http.Request) string {
+func GetIPAddress(r *http.Request) string {
 	for _, h := range []string{"X-Forwarded-For", "X-Real-Ip"} {
 		addresses := strings.Split(r.Header.Get(h), ",")
 		// march from right to left until we get a public address
